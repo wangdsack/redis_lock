@@ -28,7 +28,7 @@ public class TestController {
 
 
     /**
-     * 采用分布式锁  300次请求结果为 300
+     * 并发测试  300次请求结果为 300
      */
     @PostMapping(value = "testLock", consumes = "application/json")
     @RedissonLockAnnotation(lockRedisKey = "productName,platFormName")
@@ -50,7 +50,7 @@ public class TestController {
     }
 
     /**
-     * 不采用分布式锁    300次请求结果不一定
+     * 并发测试    300次请求结果不一定
      */
     @PostMapping(value = "testLock2", consumes = "application/json")
     public String testLock2(@RequestBody JSONObject params){

@@ -27,7 +27,7 @@ public class RedissonConfig {
 
        Config config = new Config();
         config.useSingleServer()
-                .setAddress("redis://127.0.0.1:6379")
+                .setAddress("redis://192.168.1.118:6379")
                 .setDatabase(0);
         // 本例子使用的是yaml格式的配置文件，读取使用Config.fromYAML，如果是Json文件，则使用Config.fromJSON
 //        Config config = Config.fromYAML(RedissonConfig.class.getClassLoader().getResource("redisson-config.yml"));

@@ -58,7 +58,7 @@ public class RedissonLockAop {
             }
             String key = keyBuffer.toString();
             log.info("线程{} 锁的key={}", threadName, key);
-            //获取锁  3000 等到获取锁的时间  leaseTime 获取锁后持有时间   时间单位 MILLISECONDS：毫秒
+            //获取锁  3000 等到获取锁的时间  leaseTime 获取锁后持有时间(5000毫秒后会自动释放)   时间单位 MILLISECONDS：毫秒
             if (RedissonLockUtils.tryLock(key, 3000, 5000, TimeUnit.MILLISECONDS)) {
                 try {
                     log.info("线程{} 获取锁成功", threadName);
